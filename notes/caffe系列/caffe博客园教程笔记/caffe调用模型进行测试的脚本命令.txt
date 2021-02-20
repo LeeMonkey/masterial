@@ -1,0 +1,13 @@
+<1> ## 测试自己数据模型的脚本: imagenet 
+./build/tools/caffe.bin test -model=examples/myself/model/caffenet_imagenet/train_val.prototxt -weights=/home/dm/caffe/examples/myself/model/caffenet_imagenet/train_caffenet_iter_20000.caffemodel -gpu=0
+
+
+<2> ## 在MNIST调用已经训练好的模型，测试。
+./build/tools/caffe.bin test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel -gpu=0 
+
+## 如果没有GPU则使用
+./build/tools/caffe.bin test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel
+
+
+<3> ## 在cifar10模型下面调用已经训练好的模型，测试。
+./build/tools/caffe.bin test -model=examples/cifar10/cifar10_quick_train_test.prototxt -weights=examples/cifar10/cifar10_quick_iter_5000.caffemodel -gpu=0
